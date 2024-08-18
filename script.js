@@ -17,6 +17,24 @@ function divide(num1, num2) {
     return num1 / num2;
 }
 
+function clearHandler() {
+    inputBox.value = '';
+    firstNumber = 0;
+    secondNumber = 0;
+    operator = null;
+    expression = 0;
+}
+
+
+function operation(firstNumber, operator, secondNumber) {
+    switch (operator) {
+        case '+': return add(firstNumber, secondNumber);
+        case '-': return subtract(firstNumber, secondNumber);
+        case '*': return multiply(firstNumber, secondNumber);
+        case '/': return divide(firstNumber, secondNumber);
+    }
+}
+
 let clickHandler = (event) => {
     const value = event.target.value;
     if (operators.includes(value)) {
@@ -43,7 +61,7 @@ let clickHandler = (event) => {
             console.log(`afirst: ${firstNumber}`)
             console.log(`asecond: ${expression}`)
             console.log(`athird: ${operator}`)
-        } if(!expression) {
+        } if (!expression) {
             operator = value;
         }
     } else {
@@ -67,20 +85,3 @@ let display = document.querySelector(".display");
     button.addEventListener("click", clickHandler);
 });
 
-function clearHandler() {
-    inputBox.value = '';
-    firstNumber = 0;
-    secondNumber = 0;
-    operator = null;
-    expression = 0;
-}
-
-
-function operation(firstNumber, operator, secondNumber) {
-    switch (operator) {
-        case '+': return add(firstNumber, secondNumber);
-        case '-': return subtract(firstNumber, secondNumber);
-        case '*': return multiply(firstNumber, secondNumber);
-        case '/': return divide(firstNumber, secondNumber);
-    }
-}
