@@ -21,6 +21,16 @@ let firstNumber;
 let secondNumber;
 let operator;
 
+let buttons = document.querySelectorAll(".button");
+let display = document.querySelector(".display");
+
+display.textContent = [...buttons].forEach((button) => {
+    button.addEventListener("click", () => {
+        button.innerHTML;
+    });
+});
+
+
 function operation(firstNumber, operator, secondNumber) {
     switch (operator) {
         case '+': add(firstNumber, secondNumber);
