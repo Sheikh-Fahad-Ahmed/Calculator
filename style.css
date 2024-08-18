@@ -3,12 +3,33 @@ body {
     box-sizing: border-box;
 }
 
-.header{
+#inputBox {
+    text-align: right;
+    padding: 6px 12px;
+    background: rgb(31, 32, 35);
+    border: 1px solid rgb(60, 63, 68);
+    border-radius: 4px;
+    font-size: 13px;
+    color: rgb(247, 248, 248);
+    height: 46px;
+    appearance: none;
+    transition: border 0.15s ease 0s;
+    :focus {
+        outline: none;
+        box-shadow: none;
+        border-color: none;
+    }
+
+}
+
+.header {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
 }
+
+
 
 .container {
     display: flex;
@@ -17,12 +38,4 @@ body {
     align-items: center;
     gap: 2rem;
 
-}
-
-.display{
-    border: 2px solid black;
-    height: 20px;
-    width: 150px;
-    text-align: right;
-    padding: 10px;
 }

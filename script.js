@@ -17,32 +17,46 @@ function divide(num1, num2) {
     return num1 / num2;
 }
 
-let firstNumber;
-let secondNumber;
+let clickHandler = (event) => {
+    const value = event.target.value;
+    if (operators.includes(value)) {
+        if (value == '=') {
+            inputBox.value = operation(Number(firstNumber), operator, Number(expression));
+            console.log(1);
+        } else {
+            firstNumber = expression;
+            operator = value;
+            expression = '';
+            console.log(operator);
+        }
+    } else {
+        expression += value;
+        inputBox.value = expression;
+        console.log(expression);
+    }
+}
+
+const operators = ['+', '-', '*', '/', '='];
+let expression = '';
+let firstNumber = 0;
+let secondNumber = 0;
 let operator;
 
 let buttons = document.querySelectorAll(".button");
 let display = document.querySelector(".display");
 
+
+
 [...buttons].forEach((button) => {
-    button.addEventListener("click", (event) => {
-        
-        
-    });
+    button.addEventListener("click", clickHandler);
 });
-
-
 
 
 function operation(firstNumber, operator, secondNumber) {
     switch (operator) {
-        case '+': add(firstNumber, secondNumber);
-            break;
-        case '-': subtract(firstNumber, secondNumber);
-            break;
-        case '*': multiply(firstNumber, secondNumber);
-            break;
-        case '/': divide(firstNumber, secondNumber);
-            break;
+        case '+': return add(firstNumber, secondNumber);
+        case '-': return subtract(firstNumber, secondNumber);
+        case '*': return (firstNumber, secondNumber);
+        case '/': return divide(firstNumber, secondNumber);
     }
 }
