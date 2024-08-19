@@ -7,8 +7,9 @@
 body {
     margin: 0;
     box-sizing: border-box;
-    background-color: white;
+    background-image: url("./images/blob-scene-haikei.svg");
 }
+
 
 /* #inputBox {
     text-align: right;
@@ -34,7 +35,7 @@ body {
     text-align: right;
     margin: 0;
     padding: 0;
-    width: 306px;
+    width: 280px;
     height: 100px;
     background-color: var(--display);
     font-size: 40px;
@@ -59,7 +60,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--display);
-    width: 280px;
+    width: 270px;
     height: auto;
     margin: 0 auto;
     padding: 15px;
@@ -74,8 +75,8 @@ body {
     flex-direction: column;
     gap: 0.5rem;
     background-color: var(--container);
-    padding-left: 31px;
-    padding-right: 31px;
+    padding-left: 26px;
+    padding-right: 26px;
     padding-bottom: 20px;
     padding-top: 20px;
     border-radius: 8px;
@@ -106,4 +107,12 @@ body {
 .button-0 {
     flex-grow: 2;
 
+}
+
+.top {
+    background-color: #F8961E;
+}
+
+#col {
+    background-color: #F9844A;
 }
