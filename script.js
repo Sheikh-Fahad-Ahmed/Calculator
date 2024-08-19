@@ -83,7 +83,7 @@ let clickHandler = (event) => {
             decimal.disabled = false;
         }
     } else {
-        msg.textContent = "Too Many numbers";
+        msg.textContent = "Too many numbers..start over";
     }
 }
 
