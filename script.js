@@ -42,25 +42,17 @@ let clickHandler = (event) => {
             firstNumber = operation(Number(firstNumber), operator, Number(expression));
             inputBox.value = firstNumber;
             expression = '';
-            console.log(1);
         } else if (value == 'clear') {
             clearHandler();
         } else if (!firstNumber) {
             firstNumber = expression;
             operator = value;
             expression = '';
-            console.log(`bfirst : ${firstNumber}`)
-            console.log(`bsecond: ${expression}`)
-            console.log(`bthird: ${operator}`)
         } else if (firstNumber && operator && expression) {
-            console.log(operator);
             firstNumber = operation(Number(firstNumber), operator, Number(expression));
             inputBox.value = firstNumber;
             expression = '';
-            console.log(2);
-            console.log(`afirst: ${firstNumber}`)
-            console.log(`asecond: ${expression}`)
-            console.log(`athird: ${operator}`)
+           
         } if (!expression) {
             operator = value;
         }
