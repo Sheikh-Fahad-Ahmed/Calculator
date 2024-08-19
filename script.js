@@ -17,20 +17,20 @@ function divide(num1, num2) {
     return num1 / num2;
 }
 
-function clearHandler() {
-    inputBox.value = '';
-    firstNumber = null;
-    secondNumber = null;
-    operator = null;
-    expression = '';
-}
-
 function reverseNumber(num) {
     return (-num);
 }
 
 function percentage(num) {
     return (num / 100);
+}
+
+function clearHandler() {
+    inputBox.value = '';
+    firstNumber = null;
+    secondNumber = null;
+    operator = null;
+    expression = '';
 }
 
 

@@ -94,7 +94,6 @@ body {
     font-size: 17px;
     border-radius: 10px;
     background-color: var(--buttons);
-    border: none;
     color: black;
     box-shadow: 3px 3px black;
     border: 1px solid black;
@@ -118,4 +117,15 @@ body {
 
 #col {
     background-color: #F9844A;
+}
+
+.button:hover {
+    color: #F94144;
+}
+
+.button:active {
+    background-color: #bc9b4c;
+    box-shadow: 1px 1px black;
+    transform: translateX(2px) translateY(2px);
+
 }
