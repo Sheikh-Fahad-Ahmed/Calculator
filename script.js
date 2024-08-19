@@ -47,7 +47,9 @@ function operation(firstNumber, operator, secondNumber) {
 let clickHandler = (event) => {
     const value = event.target.value;
     if (operators.includes(value)) {
-        if (value == '=') {
+        if (value == '=' && !firstNumber) {
+            inputBox.value = expression;
+        } else if (value == '=') {
             firstNumber = operation(Number(firstNumber), operator, Number(expression));
             inputBox.value = firstNumber;
             expression = '';
