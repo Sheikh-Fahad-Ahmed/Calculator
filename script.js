@@ -14,7 +14,8 @@ function divide(num1, num2) {
     if (num2 == 0) {
         return 'cannot divide by 0';
     }
-    return num1 / num2;
+    let num = num1 / num2;
+    return Math.round(num * 100) / 100;
 }
 
 function reverseNumber(num) {
@@ -70,7 +71,8 @@ let clickHandler = (event) => {
         } if (!expression) {
             operator = value;
         }
-    } else {
+    } else if (expression.length < 10) {
+        msg.textContent = "";
         expression += value;
         inputBox.value = expression;
         if (expression.includes('.')) {
@@ -78,6 +80,8 @@ let clickHandler = (event) => {
         } else {
             decimal.disabled = false;
         }
+    } else {
+        msg.textContent = "Too Many numbers";
     }
 }
 
@@ -87,7 +91,7 @@ let expression = '';
 let firstNumber = 0;
 let secondNumber = 0;
 let operator;
-
+let msg = document.querySelector(".messages");
 let buttons = document.querySelectorAll(".button");
 let display = document.querySelector(".display");
 
