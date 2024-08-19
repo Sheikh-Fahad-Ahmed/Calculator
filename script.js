@@ -12,7 +12,7 @@ function multiply(num1, num2) {
 
 function divide(num1, num2) {
     if (num2 == 0) {
-        return 'cannot divide by 0';
+        return 'ehh...no';
     }
     let num = num1 / num2;
     return Math.round(num * 100) / 100;
