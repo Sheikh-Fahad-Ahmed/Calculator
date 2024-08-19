@@ -19,14 +19,18 @@ function divide(num1, num2) {
 
 function clearHandler() {
     inputBox.value = '';
-    firstNumber = 0;
-    secondNumber = 0;
+    firstNumber = null;
+    secondNumber = null;
     operator = null;
-    expression = 0;
+    expression = '';
 }
 
 function reverseNumber(num) {
     return (-num);
+}
+
+function percentage(num) {
+    return (num / 100);
 }
 
 
@@ -46,7 +50,10 @@ let clickHandler = (event) => {
             firstNumber = operation(Number(firstNumber), operator, Number(expression));
             inputBox.value = firstNumber;
             expression = '';
-        } if (value == '+/-') {
+        } else if (value == '%') {
+            expression = percentage(Number(expression));
+            inputBox.value = expression;
+        } else if (value == '+/-') {
             expression = reverseNumber(Number(expression));
             inputBox.value = expression;
         } else if (value == 'clear') {
