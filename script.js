@@ -25,6 +25,10 @@ function clearHandler() {
     expression = 0;
 }
 
+function reverseNumber(num) {
+    return (-num);
+}
+
 
 function operation(firstNumber, operator, secondNumber) {
     switch (operator) {
@@ -42,6 +46,9 @@ let clickHandler = (event) => {
             firstNumber = operation(Number(firstNumber), operator, Number(expression));
             inputBox.value = firstNumber;
             expression = '';
+        } if (value == '+/-') {
+            expression = reverseNumber(Number(expression));
+            inputBox.value = expression;
         } else if (value == 'clear') {
             clearHandler();
         } else if (!firstNumber) {
@@ -52,17 +59,23 @@ let clickHandler = (event) => {
             firstNumber = operation(Number(firstNumber), operator, Number(expression));
             inputBox.value = firstNumber;
             expression = '';
-           
+
         } if (!expression) {
             operator = value;
         }
     } else {
         expression += value;
         inputBox.value = expression;
+        if (expression.includes('.')) {
+            decimal.disabled = true;
+        } else {
+            decimal.disabled = false;
+        }
     }
 }
 
-const operators = ['+', '-', '*', '/', '=', 'clear'];
+let decimal = document.querySelector(".button-decimal");
+const operators = ['+', '-', '*', '/', '=', '%', 'clear', '+/-',];
 let expression = '';
 let firstNumber = 0;
 let secondNumber = 0;
@@ -76,4 +89,6 @@ let display = document.querySelector(".display");
 [...buttons].forEach((button) => {
     button.addEventListener("click", clickHandler);
 });
+
+
 
